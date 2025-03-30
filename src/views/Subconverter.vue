@@ -886,7 +886,7 @@ export default {
                 value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/special/basic.ini"
               },
               {
-                label: "Clash Meta(Aethersailor)"
+                label: "Clash Meta(Aethersailor)",
                 value: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/cfg/Custom_Clash.ini"
               }
             ]
