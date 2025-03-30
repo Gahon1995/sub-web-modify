@@ -170,7 +170,10 @@
                           </el-row>
                           <el-row :gutter="10">
                             <el-col :span="12">
-                              <div style="margin-left: 35%">
+                              <el-checkbox v-model="form.classic" label="Clash传统RuleProvider"></el-checkbox>
+                            </el-col>
+                            <el-col :span="12">
+                              <div>
                                 <el-checkbox v-model="form.tpl.singbox.ipv6" label="Sing-Box支持IPV6"></el-checkbox>
                               </div>
                             </el-col>
@@ -919,6 +922,7 @@ export default {
         appendType: false,
         insert: false, // 是否插入默认订阅的节点，对应配置项 insert_url
         new_name: true, // 是否使用 Clash 新字段
+        classic: true,
         tpl: {
           surge: {
             doh: false // dns 查询是否使用 DoH
@@ -1139,6 +1143,9 @@ export default {
           this.form.scv.toString() +
           "&fdn=" +
           this.form.fdn.toString();
+      if (this.form.classic === true) {
+          this.customSubUrl += "&classic=true"
+      }
       if (this.form.clientType.includes("surge")) {
         if (this.form.tpl.surge.doh === true) {
           this.customSubUrl += "&surge.doh=true";
