@@ -467,6 +467,7 @@ export default {
           "自动判断客户端": "auto",
         },
         shortTypes: {
+          "gahon.top": "https://s.gahon.top/short",
           "v1.mk": "https://v1.mk/short",
           "d1.mk": "https://d1.mk/short",
           "dlj.tf": "https://dlj.tf/short",
@@ -474,6 +475,7 @@ export default {
           "sub.cm": "https://sub.cm/short",
         },
         customBackend: {
+          "gahon": "https://sc.gahon.top:8443/api"
           "肥羊增强型后端【vless reality+hy1+hy2】": "https://url.v1.mk",
           "肥羊备用后端【vless reality+hy1+hy2】": "https://sub.d1.mk",
           "つつ-多地防失联【负载均衡+国内优化】": "https://api.tsutsu.one",
@@ -483,6 +485,7 @@ export default {
           "sub作者&lhie1提供": "https://api.dler.io",
         },
         backendOptions: [
+          {value: "https://s.gahon.top"},
           {value: "https://url.v1.mk"},
           {value: "https://sub.d1.mk"},
           {value: "https://api.tsutsu.one"},
@@ -881,6 +884,10 @@ export default {
               {
                 label: "Basic",
                 value: "https://raw.githubusercontent.com/SleepyHeeead/subconverter-config/master/remote-config/special/basic.ini"
+              },
+              {
+                label: "Clash Meta(Aethersailor)"
+                value: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/cfg/Custom_Clash.ini"
               }
             ]
           }
@@ -889,9 +896,9 @@ export default {
       form: {
         sourceSubUrl: "",
         clientType: "",
-        customBackend: this.getUrlParam() == "" ? "https://url.v1.mk" : this.getUrlParam(),
-        shortType: "https://v1.mk/short",
-        remoteConfig: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_NoAuto.ini",
+        customBackend: this.getUrlParam() == "" ? "https://sc.gahon.top:8443/api" : this.getUrlParam(),
+        shortType: "https://s.gahon.top/short",
+        remoteConfig: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/cfg/Custom_Clash.ini",
         excludeRemarks: "",
         includeRemarks: "",
         filename: "",
@@ -946,7 +953,7 @@ export default {
     this.isPC = this.$getOS().isPc;
   },
   mounted() {
-    this.tanchuang();
+    // this.tanchuang();
     this.form.clientType = "clash";
     this.getBackendVersion();
     this.anhei();
