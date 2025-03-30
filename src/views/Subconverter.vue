@@ -475,7 +475,7 @@ export default {
           "sub.cm": "https://sub.cm/short",
         },
         customBackend: {
-          "gahon": "https://sc.gahon.top:8443/api"
+          "gahon": "https://sc.gahon.top:8443/api",
           "肥羊增强型后端【vless reality+hy1+hy2】": "https://url.v1.mk",
           "肥羊备用后端【vless reality+hy1+hy2】": "https://sub.d1.mk",
           "つつ-多地防失联【负载均衡+国内优化】": "https://api.tsutsu.one",
